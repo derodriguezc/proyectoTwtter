@@ -1,6 +1,6 @@
-<div class="col-12 border border-info p-3 mt-2 border border-warning">
+<div class="col-12 border border-info p-3 mt-2 border border-danger">
   <div>
-    <%= link_to "<i class='fa fa-calendar'></i> ".html_safe+time_ago_in_words(tweet.created_at),tweet %>
+    <%= link_to "<i class='fa fa-calendar' text-success></i> ".html_safe+time_ago_in_words(tweet.created_at),tweet %>
   </div>
   <%= image_tag (tweet.user.avatar), :class => "avatar-in-tweet rounde" %>
   <%= tweet.content %>
