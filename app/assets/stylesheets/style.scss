@@ -3,6 +3,8 @@
 }
 body{
   background-image: url("brickwall.png");
+  margin: 0px;
+  position: relative;
 }
 footer{
   background-color: #212529;
@@ -10,6 +12,13 @@ footer{
   font-weight: 300;
   padding: 20px;
   color: #eeeeee;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.content{
+  padding-bottom: 81px;
 }
 nav, li{
   font-family: 'Kalam', cursive;
