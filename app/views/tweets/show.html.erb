@@ -2,7 +2,7 @@
 
 <p>
   <strong><%= @tweet.user.username %> dice:</strong><br/>
-  <i><%= @tweet.content %></i>
+  <i><%= @tweet.content.html_safe %></i>
 </p>
 
 <h3>Likes (<%= @tweet.likes.count %>)</h3>
