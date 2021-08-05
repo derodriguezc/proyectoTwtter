@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+  before_destroy :delete_friends
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,6 +13,10 @@ class User < ApplicationRecord
 
   def is_following?(friend_id)
     self.friends.where(:friend_id => friend_id).exists?
+  end
+
+  def delete_friends
+    Friend.where(:friend_id => id).destroy_all
   end
 
   def arr_friends_id

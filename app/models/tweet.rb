@@ -1,5 +1,3 @@
-include ActionView::Helpers::UrlHelper
-
 class Tweet < ApplicationRecord
 
   before_save :add_hashtags
@@ -18,7 +16,7 @@ class Tweet < ApplicationRecord
     self.content.split(" ").each do |word|
       if word.start_with?("#")
         word_clean = word.gsub("#", "")
-        new_content += link_to(word, Rails.application.routes.url_helpers.root_path+"?search="+word_clean)+" "
+        new_content += '<a href="/?search='+word_clean+'">'+word+'</a> '
       else
         new_content += word + " "
       end
