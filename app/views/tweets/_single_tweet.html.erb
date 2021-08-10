@@ -1,4 +1,4 @@
-<div class="col-12 border border-info p-3 mt-2 border border-success rounded">
+<div class="col-12 border-info p-3 mt-2 rounded border-size">
   <div>
     <%= link_to "<i class='fa fa-calendar' text-success></i> ".html_safe+time_ago_in_words(tweet.created_at),tweet %>
   </div>
@@ -22,7 +22,7 @@
       <% if tweet.is_liked?(current_user) %>
         <%= link_to "<i class='far fa-lightbulb text-warning'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
       <% else %>
-        <%= link_to "<i class='fas fa-lightbulb'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
+        <%= link_to "<i class='fas fa-lightbulb text-dark'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
       <% end %>
       <%= tweet.likes.count %>
   </div>

@@ -2,7 +2,7 @@
   width: 80px;
 }
 body{
-  background-image: url("brickwall.png");
+  background-image: url('brickwall.png');
   margin: 0px;
   position: relative;
 }
@@ -27,3 +27,9 @@ nav, li{
 .texto{
   font-family: 'Kalam', cursive;
 }
+.border-size{
+  border-style: solid;
+  border-width: 5px;
+  border-color: darkslategray;
+}
+
