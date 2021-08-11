@@ -1,6 +1,6 @@
 <div class="col-12 border-info p-3 mt-2 rounded border-size">
   <div>
-    <%= link_to "<i class='fa fa-calendar' text-success></i> ".html_safe+time_ago_in_words(tweet.created_at),tweet %>
+    <%= link_to "<i class='fa fa-calendar text-info'></i> ".html_safe+time_ago_in_words(tweet.created_at),tweet %>
   </div>
   <br/>
   <b><%= tweet.user.username%> dice: </b><br/>
@@ -22,7 +22,7 @@
       <% if tweet.is_liked?(current_user) %>
         <%= link_to "<i class='far fa-lightbulb text-warning'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
       <% else %>
-        <%= link_to "<i class='fas fa-lightbulb text-dark'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
+        <%= link_to "<i class='fas fa-lightbulb text-light'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
       <% end %>
       <%= tweet.likes.count %>
   </div>
@@ -30,12 +30,12 @@
       <%= tweet.count_rt %>
       <% if user_signed_in? %>
         <% if tweet.count_rt > 0 %>
-          <%= link_to "<i class='fas fa-retweet text-primary'></i>".html_safe, tweet_retweet_path(tweet), method: :post%>
+          <%= link_to "<i class='fas fa-retweet text-warning'></i>".html_safe, tweet_retweet_path(tweet), method: :post%>
         <% else %>
-          <%= link_to "<i class='fas fa-retweet text-muted'></i>".html_safe, tweet_retweet_path(tweet), method: :post%>
+          <%= link_to "<i class='fas fa-retweet text-light'></i>".html_safe, tweet_retweet_path(tweet), method: :post%>
         <% end %>
         <% if tweet.is_retweet? %>
-          <%= link_to "Retweet...", tweet.tweet_ref %>
+          <%= link_to "Retweet...", tweet.tweet_ref, :class => "text-light" %>
         <% end %>
       <% else %>
         <%= link_to "<i class='fas fa-retweet text-muted'></i>".html_safe, new_user_session_path %>
