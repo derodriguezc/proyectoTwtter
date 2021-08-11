@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= @tweet.user.username %> dice:</strong><br/>
+<p class="texto">
+  <strong><%= @tweet.user.username %> dice:</strong><br/> </br>
   <i><%= @tweet.content.html_safe %></i>
 </p>
 
-<h3>Likes (<%= @tweet.likes.count %>)</h3>
+<h3 class="texto">Likes (<%= @tweet.likes.count %>)</h3>
 <% @tweet.liking_users.each do |user| %>
   <%= image_tag(user.avatar, class: "avatar-in-tweet rounded") %>
 <% end %>
 <br/>
-<%= link_to 'Back', tweets_path %>
+<%= link_to 'Back', tweets_path, class: "text-info" %>
